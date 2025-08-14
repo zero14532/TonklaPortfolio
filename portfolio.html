@@ -153,116 +153,189 @@
         <div class="container-fluid padding-side text-white">
             <div class="row flex-column gap-5 align-items-center">
                 <div class="col-lg-9">
-                    <h1 class="banner-size fw-medium display-1 mb-4" data-aos="fade-up" data-aos-duration="1200">
+                    <h1 class="banner-size fw-medium display-2 mb-4" data-aos="fade-up" data-aos-duration="1200">
                         See <span class="text-primary"> My Works </span>
                     </h1>
 
                 </div>
+                
                 <div class="col-lg-9" data-aos="fade-up" data-aos-duration="1400">
+                    
                     <div class="swiper portfolio-swiper">
+                        
                         <div class="swiper-wrapper">
                             
                             <div class="swiper-slide">
-                                <div class="row">
-                                    <div class="col-lg-4 mb-4">
-                                        <a href="images/game1.jpg" target="_blank">
-                                        <img src="images/game1.jpg" alt="project-img" class="img-fluid rounded-3">
-                                        </a>
-                                    </div>
-                                    <div class="col-lg-4 mb-4">
-                                        <a href="images/game2.jpg" target="_blank">
-                                        <img src="images/game2.jpg" alt="project-img" class="img-fluid rounded-3">
-                                        </a>
-                                    </div>
-                                    <div class="col-lg-4 mb-4">
-                                        <a href="images/game3.jpg" target="_blank">
-                                        <img src="images/game3.jpg" alt="project-img" class="img-fluid rounded-3">
-                                        </a>
-                                    </div>
-                                    <div class="col-lg-4 mb-4">
-                                        <a href="images/game4.jpg" target="_blank">
-                                        <img src="images/game4.jpg" alt="project-img" class="img-fluid rounded-3">
-                                        </a>
-                                    </div>
-                                    <div class="col-lg-4 mb-4">
-                                        <a href="images/game5.jpg" target="_blank">
-                                        <img src="images/game5.jpg" alt="project-img" class="img-fluid rounded-3">
-                                        </a>
-                                    </div>
-                                    <div class="col-lg-4 mb-4">
-                                        <a href="images/game6.jpg" target="_blank">
-                                        <img src="images/game6.jpg" alt="project-img" class="img-fluid rounded-3">
-                                        </a>
-                                    </div>
-                                    <div class="col-lg-4 mb-4">
-                                        <a href="images/game7.jpg" target="_blank">
-                                        <img src="images/game7.jpg" alt="project-img" class="img-fluid rounded-3">
-                                        </a>
-                                    </div>
-                                    <div class="col-lg-4 mb-4">
-                                        <a href="images/game8.jpg" target="_blank">
-                                        <img src="images/game8.jpg" alt="project-img" class="img-fluid rounded-3">
-                                        </a>
-                                    </div>
-                                    <div class="col-lg-4 mb-4">
-                                        <a href="images/game9.jpg" target="_blank">
-                                        <img src="images/game9.jpg" alt="project-img" class="img-fluid rounded-3">
-                                        </a>
-                                    </div>
+                                
+                                <style>
+                                    
+                                    .image-grid {
+                                        display: grid;
+                                        grid-template-columns: repeat(4, 1fr); /* คอม: 4 คอลัมน์ */
+                                        gap: 20px; /* ระยะห่างระหว่างภาพ */
+                                    }
+
+                                    .image-grid a {
+                                        display: block;
+                                        }
+
+                                    .image-grid img {
+                                        width: 100%;
+                                        height: auto;
+                                        display: block;
+                                        border-radius: 8px; /* มุมโค้ง */
+                                    }
+
+                                        /* ถ้าหน้าจอกว้าง <= 768px (มือถือ) ให้เป็น 2 คอลัมน์ */
+                                    @media (max-width: 768px) {
+                                        .image-grid {
+                                            grid-template-columns: repeat(2, 1fr);
+                                        }
+                                    }
+                                </style>
+                                <div class="image-grid">
+                                    
+                                    <a href="images/game1.jpg" target="_blank">
+                                    <img src="images/game1.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    </a>
+                                    
+                                    
+                                    <a href="images/game2.jpg" target="_blank">
+                                    <img src="images/game2.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    </a>
+                                    
+                                    
+                                    <a href="images/game3.jpg" target="_blank">
+                                    <img src="images/game3.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    </a>
+                                    
+                                    
+                                    <a href="images/game4.jpg" target="_blank">
+                                    <img src="images/game4.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    </a>
+                                    
+                                    <a href="images/game5.jpg" target="_blank">
+                                    <img src="images/game5.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    </a>
+                                    
+                                    <a href="images/game6.jpg" target="_blank">
+                                    <img src="images/game6.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    </a>
+                                    
+                                    <a href="images/game7.jpg" target="_blank">
+                                    <img src="images/game7.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    </a>
+                                    
+                                    <a href="images/game8.jpg" target="_blank">
+                                    <img src="images/game8.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    </a>
+                                    
+                                    
                                     
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                <div class="row">
-                                    <div class="col-lg-4 mb-4">
-                                        <a href="images/game10.jpg" target="_blank">
-                                        <img src="images/game10.jpg" alt="project-img" class="img-fluid rounded-3">
-                                        </a>
-                                    </div>
-                                    <div class="col-lg-4 mb-4">
-                                        <a href="images/game11.jpg" target="_blank">
-                                        <img src="images/game11.jpg" alt="project-img" class="img-fluid rounded-3">
-                                        </a>
-                                    </div>
-                                    <div class="col-lg-4 mb-4">
-                                        <a href="images/game12.jpg" target="_blank">
-                                        <img src="images/game12.jpg" alt="project-img" class="img-fluid rounded-3">
-                                        </a>
-                                    </div>
-                                    <div class="col-lg-4 mb-4">
-                                        <a href="images/game13.jpg" target="_blank">
-                                        <img src="images/game13.jpg" alt="project-img" class="img-fluid rounded-3">
-                                        </a>
-                                    </div>
+                                <style>
+                                    .image-grid {
+                                        display: grid;
+                                        grid-template-columns: repeat(4, 1fr); /* คอม: 4 คอลัมน์ */
+                                        gap: 20px; /* ระยะห่างระหว่างภาพ */
+                                    }
+
+                                    .image-grid a {
+                                        display: block;
+                                        }
+
+                                    .image-grid img {
+                                        width: 100%;
+                                        height: auto;
+                                        display: block;
+                                        border-radius: 8px; /* มุมโค้ง */
+                                    }
+
+                                        /* ถ้าหน้าจอกว้าง <= 768px (มือถือ) ให้เป็น 2 คอลัมน์ */
+                                    @media (max-width: 768px) {
+                                        .image-grid {
+                                            grid-template-columns: repeat(2, 1fr);
+                                        }
+                                    }
+                                </style>
+                                <div class="image-grid">
+                                    
+                                    <a href="images/game9.jpg" target="_blank">
+                                    <img src="images/game9.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    </a>
+                                    
+                                   
+                                    <a href="images/game10.jpg" target="_blank">
+                                    <img src="images/game10.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    </a>
+                                    
+                                    <a href="images/game11.jpg" target="_blank">
+                                    <img src="images/game11.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    </a>
+                                   
+                                    <a href="images/game12.jpg" target="_blank">
+                                    <img src="images/game12.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    </a>
+                                    
+                                    <a href="images/game13.jpg" target="_blank">
+                                    <img src="images/game13.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    </a>
+                                    
                                     
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                <div class="row">
-                                    <div class="col-lg-4 mb-4">
-                                        <a href="images/camt1.jpg" target="_blank">
-                                        <img src="images/camt1.jpg" alt="project-img" class="img-fluid rounded-3">
-                                        </a>
-                                    </div>
-                                    <div class="col-lg-4 mb-4">
-                                        <a href="images/camt2.jpg" target="_blank">
-                                        <img src="images/camt2.jpg" alt="project-img" class="img-fluid rounded-3">
-                                        </a>
-                                    </div>
-                                    <div class="col-lg-4 mb-4">
-                                        <a href="images/camt3.jpg" target="_blank">
-                                        <img src="images/camt3.jpg" alt="project-img" class="img-fluid rounded-3">
-                                        </a>
-                                    </div>
-                                    <div class="col-lg-4 mb-4">
-                                        <a href="images/camt4.jpg" target="_blank">
-                                        <img src="images/camt4.jpg" alt="project-img" class="img-fluid rounded-3">
-                                        </a>
-                                    </div>
+                                <style>
+                                    .image-grid {
+                                        display: grid;
+                                        grid-template-columns: repeat(4, 1fr); /* คอม: 4 คอลัมน์ */
+                                        gap: 20px; /* ระยะห่างระหว่างภาพ */
+                                    }
+
+                                    .image-grid a {
+                                        display: block;
+                                        }
+
+                                    .image-grid img {
+                                        width: 100%;
+                                        height: auto;
+                                        display: block;
+                                        border-radius: 8px; /* มุมโค้ง */
+                                    }
+
+                                        /* ถ้าหน้าจอกว้าง <= 768px (มือถือ) ให้เป็น 2 คอลัมน์ */
+                                    @media (max-width: 768px) {
+                                        .image-grid {
+                                            grid-template-columns: repeat(2, 1fr);
+                                        }
+                                    }
+                                </style>
+                                <div class="image-grid">
+                                    
+                                    <a href="images/camt1.jpg" target="_blank">
+                                    <img src="images/camt1.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    </a>
+                                    
+                                    <a href="images/camt2.jpg" target="_blank">
+                                    <img src="images/camt2.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    </a>
+                                    
+                                    <a href="images/camt3.jpg" target="_blank">
+                                    <img src="images/camt3.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    </a>
+                                    
+                                    <a href="images/camt4.jpg" target="_blank">
+                                    <img src="images/camt4.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    </a>
+                                    
                                 </div>
                             </div>
                         </div>
+                        
                         <div class="swiper-pagination position-static mt-3"></div>
+                        
                     </div>
                 </div>
             </div>
