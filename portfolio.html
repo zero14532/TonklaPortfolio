@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -193,10 +194,11 @@
                                         }
                                     }
                                 </style>
+                                
                                 <div class="image-grid">
                                     
-                                    <a href="images/game1.jpg" target="_blank">
-                                    <img src="images/game1.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    <a class="zoom-press" href="images/game1.jpg" target="_blank">
+                                        <img src="images/game1.jpg" alt="project-img" class="img-fluid rounded-3">
                                     </a>
                                     
                                     
@@ -233,6 +235,7 @@
                                     
                                     
                                 </div>
+                                
                             </div>
                             <div class="swiper-slide">
                                 <style>
@@ -333,9 +336,53 @@
                                 </div>
                             </div>
                         </div>
-                        
                         <div class="swiper-pagination position-static mt-3"></div>
-                        
+                        <script>
+                            (function() {
+                                // สร้าง overlay ครั้งเดียว
+                                const overlay = document.createElement('div');
+                                overlay.className = 'clickzoom-overlay';
+                                overlay.innerHTML = '<img alt="zoomed">';
+                                document.body.appendChild(overlay);
+
+                                const overlayImg = overlay.querySelector('img');
+
+                                const show = (src) => {
+                                    overlayImg.src = src;
+                                    overlay.classList.add('active');
+                                    document.documentElement.classList.add('no-scroll'); // ล็อกสกรอลล์พื้นหลัง
+                                };
+
+                                const hide = () => {
+                                    overlay.classList.remove('active');
+                                    document.documentElement.classList.remove('no-scroll');
+                                };
+
+                                // ปิดเมื่อคลิกพื้นที่มืด หรือกด ESC
+                                overlay.addEventListener('click', hide);
+                                window.addEventListener('keydown', (e) => { if (e.key === 'Escape') hide(); });
+
+                                // ใช้ event delegation: จับคลิกจากลิงก์รูปภายใน .image-grid ทั้งหมด
+                                document.addEventListener('click', (e) => {
+                                    const a = e.target.closest('.image-grid a');
+                                    if (!a) return;
+
+                                    // อนุญาต Ctrl/Cmd-Click เปิดแท็บใหม่ได้ตามปกติ
+                                    if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button === 1) return;
+
+                                    // ใช้ href เป็นรูปใหญ่ ถ้าไม่มีค่อย fallback เป็น src ของ <img>
+                                    const href = a.getAttribute('href') || (a.querySelector('img') && a.querySelector('img').src);
+                                    if (!href) return;
+
+                                    // โฟกัสเฉพาะไฟล์ .jpg/.jpeg (ถ้าอยากรองรับ .png ด้วยให้เพิ่มใน regex)
+                                    const lower = href.split('?')[0].toLowerCase();
+                                    if (!/\.(jpg|jpeg)$/.test(lower)) return;
+
+                                    e.preventDefault(); // กันไม่ให้เปิดลิงก์
+                                    show(href);
+                                });
+                            })();
+                        </script>
                     </div>
                 </div>
             </div>
