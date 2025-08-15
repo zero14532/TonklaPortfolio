@@ -26,6 +26,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    try {
+      const res = await fetch('contact.php', { method: 'POST', body: formData });
+      const ok = res.ok;
+      const data = await (res.headers.get('content-type')?.includes('application/json') ? res.json() : res.text());
+      if (ok) { alert('ส่งข้อความเรียบร้อยแล้ว ขอบคุณมาก!'); form.reset(); }
+      else { alert('ส่งไม่สำเร็จ: ' + (data?.message || data)); }
+    } catch (err) {
+      alert('เกิดข้อผิดพลาดในการเชื่อมต่อเซิร์ฟเวอร์');
+    }
+  });
+});
+</script>
+
 
 <body>
 

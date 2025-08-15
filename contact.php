@@ -1,48 +1,64 @@
-<?php 
-$errors = '';
-$myemail = 'yourname@website.com';//<-----Put Your email address here.
+<?php
+// 1) ใส่ Discord Webhook URL ตรงนี้
+$WEBHOOK_URL = 'https://discord.com/api/webhooks/1405921499625427005/rEu0aYIn1WPE36pnaFaoYIkrK5BuUgLwks-bKRUffUnPr5E0W8A9oouZkEq1Mx9CvCMF';
 
-if(empty($_POST['name'])  || 
-   empty($_POST['email']) || 
-   empty($_POST['message']))
-{
-    $errors .= "\n Error: all fields are required";
+// ตรวจสอบว่าใส่ Webhook แล้วหรือยัง
+if ($WEBHOOK_URL === 'https://discord.com/api/webhooks/1405921499625427005/rEu0aYIn1WPE36pnaFaoYIkrK5BuUgLwks-bKRUffUnPr5E0W8A9oouZkEq1Mx9CvCMF') {
+    http_response_code(500);
+    exit('Please set $WEBHOOK_URL in contact.php');
 }
 
-$name = $_POST['name']; 
-$email_address = $_POST['email']; 
-$message = $_POST['message']; 
-
-if (!preg_match(
-"/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/i", 
-$email_address))
-{
-    $errors .= "\n Error: Invalid email address";
+// อนุญาตเฉพาะ POST
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    exit('Method Not Allowed');
 }
 
+// รับค่าจากฟอร์ม
+$name    = trim($_POST['name'] ?? '');
+$email   = trim($_POST['email'] ?? '');
+$phone   = trim($_POST['phone'] ?? '');
+$subject = trim($_POST['subject'] ?? '');
+$message = trim($_POST['message'] ?? '');
 
-
-if( empty($errors)) {
-
-	$to = $myemail;
-
-	$email_subject = "Contact form submission: $name";
-
-	$email_body = "You have received a new message. ".
-
-	" Here are the details:\n Name: $name \n ".
-
-	"Email: $email_address\n Message \n $message";
-
-	$headers = "From: $myemail\n";
-
-	$headers .= "Reply-To: $email_address";
-
-	mail($to,$email_subject,$email_body,$headers);
-
-	//redirect to the 'thank you' page
-
-	header('Location: thank-you.html');
-
+// ตรวจสอบค่าว่าง
+if ($name === '' || $email === '' || $message === '') {
+    http_response_code(422);
+    exit('Missing required fields.');
 }
-?>
+
+// เตรียมข้อมูลที่จะส่งไป Discord
+$embed = [
+    'title' => $subject !== '' ? $subject : 'New Contact Form',
+    'type' => 'rich',
+    'fields' => [
+        ['name' => 'Name', 'value' => $name, 'inline' => true],
+        ['name' => 'Email', 'value' => $email, 'inline' => true],
+        ['name' => 'Phone', 'value' => $phone !== '' ? $phone : '—', 'inline' => true],
+        ['name' => 'Message', 'value' => $message],
+    ],
+    'timestamp' => date('c'),
+];
+
+$payload = json_encode([
+    'content' => '**มีข้อความใหม่จาก Contact Form**',
+    'embeds' => [$embed]
+], JSON_UNESCAPED_UNICODE);
+
+// ส่งไป Discord
+$ch = curl_init($WEBHOOK_URL);
+curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$response = curl_exec($ch);
+$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+curl_close($ch);
+
+// ตอบกลับ
+if ($httpCode >= 200 && $httpCode < 300) {
+    echo json_encode(['ok' => true, 'message' => 'ส่งสำเร็จ']);
+} else {
+    http_response_code(500);
+    echo 'ส่งไม่สำเร็จ';
+}
