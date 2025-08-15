@@ -186,6 +186,22 @@
                                         display: block;
                                         border-radius: 8px; /* มุมโค้ง */
                                     }
+                                    .image-grid a {
+                                        display: block;
+                                        overflow: hidden; /* ซ่อนรูปที่ขยายล้นออกมา */
+                                        border-radius: 8px; /* มุมโค้งอยู่ที่กรอบ */
+                                    }
+
+                                    .image-grid img {
+                                        width: 100%;
+                                        height: auto;
+                                        display: block;
+                                        transition: transform 0.3s ease;
+                                    }
+
+                                    .image-grid a:hover img {
+                                        transform: scale(1.1); /* ขยายเฉพาะรูปภายใน */
+                                    }
 
                                         /* ถ้าหน้าจอกว้าง <= 768px (มือถือ) ให้เป็น 2 คอลัมน์ */
                                     @media (max-width: 768px) {
@@ -193,6 +209,7 @@
                                             grid-template-columns: repeat(2, 1fr);
                                         }
                                     }
+                                    
                                 </style>
                                 
                                 <div class="image-grid">
@@ -239,29 +256,7 @@
                             </div>
                             <div class="swiper-slide">
                                 <style>
-                                    .image-grid {
-                                        display: grid;
-                                        grid-template-columns: repeat(4, 1fr); /* คอม: 4 คอลัมน์ */
-                                        gap: 20px; /* ระยะห่างระหว่างภาพ */
-                                    }
-
-                                    .image-grid a {
-                                        display: block;
-                                        }
-
-                                    .image-grid img {
-                                        width: 100%;
-                                        height: auto;
-                                        display: block;
-                                        border-radius: 8px; /* มุมโค้ง */
-                                    }
-
-                                        /* ถ้าหน้าจอกว้าง <= 768px (มือถือ) ให้เป็น 2 คอลัมน์ */
-                                    @media (max-width: 768px) {
-                                        .image-grid {
-                                            grid-template-columns: repeat(2, 1fr);
-                                        }
-                                    }
+                                    
                                 </style>
                                 <div class="image-grid">
                                     
@@ -290,31 +285,7 @@
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                <style>
-                                    .image-grid {
-                                        display: grid;
-                                        grid-template-columns: repeat(4, 1fr); /* คอม: 4 คอลัมน์ */
-                                        gap: 20px; /* ระยะห่างระหว่างภาพ */
-                                    }
-
-                                    .image-grid a {
-                                        display: block;
-                                        }
-
-                                    .image-grid img {
-                                        width: 100%;
-                                        height: auto;
-                                        display: block;
-                                        border-radius: 8px; /* มุมโค้ง */
-                                    }
-
-                                        /* ถ้าหน้าจอกว้าง <= 768px (มือถือ) ให้เป็น 2 คอลัมน์ */
-                                    @media (max-width: 768px) {
-                                        .image-grid {
-                                            grid-template-columns: repeat(2, 1fr);
-                                        }
-                                    }
-                                </style>
+                            
                                 <div class="image-grid">
                                     
                                     <a href="images/camt1.jpg" target="_blank">
