@@ -1,0 +1,26 @@
+index.html
+ส่วนหัวของ HTML (<head>)
+- ตั้งค่า charset และ viewport
+- ชื่อเว็บ (แสดงบนแท็บ): Home
+- เชื่อมโยงกับ CSS ของ Swiper, Bootstrap, vendor.css และ styles.css
+- โหลดฟอนต์จาก Google Fonts เช่น Bebas Neue และ Inter
+
+ส่วน <body>
+- ตั้งค่าพื้นหลังด้วยรูป images/background.jpg
+- กำหนดไม่ให้รูปซ้ำ และปรับขนาดให้พอดีกับหน้าจอ
+- มีการฝัง SVG symbols ไว้สำหรับใช้เป็นไอคอนทั่วทั้งเว็บไซต์ เช่น ไอคอนบ้าน (home), หน้าเพจ, โซเชียลมีเดีย (Facebook, Instagram, Twitter), ลูกศรเลื่อนซ้าย/ขวา ฯลฯ
+
+about.html
+- head: กำหนดฟอนต์, CSS, และ meta tag สำหรับ responsive
+- svg: เตรียมไอคอนเวกเตอร์ไว้ใช้งาน
+- preloader: แอนิเมชันโหลดหน้าเว็บ
+- navbar: เมนูนำทางพร้อมโลโก้ และปุ่ม Hire Me
+- offcanvas: เมนูสำหรับหน้าจอมือถือ
+
+contact.html
+- การเชื่อมโยงกับ Bootstrap, Swiper, และไฟล์ CSS ภายนอก เช่น vendor.css และ styles.css
+- การฝัง ไอคอน SVG แบบ inline ไว้ใน <svg> ซึ่งสามารถเรียกใช้ด้วย <use xlink:href="#icon-id">
+- การตั้งค่าเริ่มต้นใน <head> เพื่อให้รองรับภาษาไทยและอุปกรณ์มือถือ
+
+portfolio.html
+- ทำงานเอารูปมาใส่โชว์
