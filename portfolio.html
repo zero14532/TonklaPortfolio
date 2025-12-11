@@ -109,34 +109,9 @@
     <nav id="header-nav" class="navbar navbar-expand-lg py-4 z-1" data-bs-theme="dark">
         <div class="container-fluid padding-side">
             <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
-
-            <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <!-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5> -->
-                    <button type="button" class="btn-close text-reset shadow-none" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
-                </div>
+            <div >
                 <div class="offcanvas-body justify-content-end">
-                    <div class="d-lg-none">
-                        <img src="images/banner-img.png" alt="img" class="img-fluid">
-                        <div class="text-center">
-                            <a href="contact.html" class="btn button  text-white mt-4 position-relative pe-5"
-                                data-aos="fade-up" data-aos-duration="1600">
-                                <span> Hire Me </span>
-                                <div class="position-absolute top-50 end-0 translate-middle-y me-3">
-                                    <svg class="arrow-right text-white p-1" width="28" height="28">
-                                        <use xlink:href="#arrow-right"></use>
-                                    </svg>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <ul class="d-flex list-unstyled justify-content-center mt-4">
+                    <ul class="d-flex list-unstyled justify-content-center mt-3">
                         <li>
                             <a class="nav-link ms-4" href="https://www.instagram.com/t0n_kla/">
                                 <svg class="social-icon" width="24" height="24">
@@ -161,15 +136,10 @@
                 </div>
                 
                 <div class="col-lg-9" data-aos="fade-up" data-aos-duration="1400">
-                    
                     <div class="swiper portfolio-swiper">
-                        
                         <div class="swiper-wrapper">
-                            
-                            <div class="swiper-slide">
-                                
-                                <style>
-                                    
+                            <div class="swiper-slide"> 
+                                <style> 
                                     .image-grid {
                                         display: grid;
                                         grid-template-columns: repeat(4, 1fr); /* คอม: 4 คอลัมน์ */
@@ -212,27 +182,30 @@
                                     
                                 </style>
                                 
-                                <div class="image-grid">
+                                <div class="image-grid"> <!-- ภาพหน้าแรก -->
                                     
-                                    <a class="zoom-press" href="images/game1.jpg" target="_blank">
-                                        <img src="images/game1.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    <!-- data-link="realLife4.html คือกดเข้าไปดู 3D Model-->
+                                    
+                                    <a href="images/game3.jpg" data-link="turtle.html" target="_blank">
+                                    <img src="images/game3.jpg" alt="project-img" class="img-fluid rounded-3">
                                     </a>
-                                    
-                                    
-                                    <a href="images/game2.jpg" target="_blank">
+
+                                    <a href="images/game2.jpg" data-link="shark.html"target="_blank">
                                     <img src="images/game2.jpg" alt="project-img" class="img-fluid rounded-3">
                                     </a>
                                     
-                                    
-                                    <a href="images/game3.jpg" target="_blank">
-                                    <img src="images/game3.jpg" alt="project-img" class="img-fluid rounded-3">
-                                    </a>
-                                    
-                                    
-                                    <a href="images/game4.jpg" target="_blank">
+                                    <a href="images/game4.jpg" data-link="fish.html" target="_blank">
                                     <img src="images/game4.jpg" alt="project-img" class="img-fluid rounded-3">
                                     </a>
-                                    
+
+                                    <a href="images/realLife4.jpg" data-link="thaiBuddhaAmulet.html" target="_blank">
+                                    <img src="images/realLife4.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    </a>
+
+                                    <a href="images/game1.jpg" data-link="fantasySword.html" target="_blank">
+                                        <img src="images/game1.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    </a>
+
                                     <a href="images/game5.jpg" target="_blank">
                                     <img src="images/game5.jpg" alt="project-img" class="img-fluid rounded-3">
                                     </a>
@@ -249,7 +222,18 @@
                                     <img src="images/game8.jpg" alt="project-img" class="img-fluid rounded-3">
                                     </a>
                                     
+                                    <a href="images/realLife1.jpg" target="_blank">
+                                    <img src="images/realLife1.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    </a>
                                     
+                                    <a href="images/realLife2.jpg" target="_blank">
+                                    <img src="images/realLife2.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    </a>
+                                    
+                                    <a href="images/realLife3.jpg" target="_blank">
+                                    <img src="images/realLife3.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    </a>
+
                                     
                                 </div>
                                 
@@ -292,7 +276,7 @@
                                     <img src="images/camt1.jpg" alt="project-img" class="img-fluid rounded-3">
                                     </a>
                                     
-                                    <a href="images/camt2.jpg" target="_blank">
+                                    <a href="images/camt2.jpg" data-link="camtAward1.html" target="_blank">
                                     <img src="images/camt2.jpg" alt="project-img" class="img-fluid rounded-3">
                                     </a>
                                     
@@ -310,49 +294,138 @@
                         <div class="swiper-pagination position-static mt-3"></div>
                         <script>
                             (function() {
-                                // สร้าง overlay ครั้งเดียว
+                                // สร้าง overlay พร้อมวงกลมและปุ่มปิด
                                 const overlay = document.createElement('div');
                                 overlay.className = 'clickzoom-overlay';
-                                overlay.innerHTML = '<img alt="zoomed">';
-                                document.body.appendChild(overlay);
+                                overlay.innerHTML = `
+                                    <img class="main-img" alt="zoomed">
+                                    <div class="nav-circle-container"></div>
+                                    <div class="close-btn"></div>
+                                `;
+                            document.body.appendChild(overlay);
 
-                                const overlayImg = overlay.querySelector('img');
+                            const overlayImg = overlay.querySelector('.main-img');
+                            const navContainer = overlay.querySelector('.nav-circle-container');
+                            const closeBtn = overlay.querySelector('.close-btn');
+                            let allImages = [];
+                            let currentIndex = 0;
+                            let swiperInstance = null;
 
-                                const show = (src) => {
-                                    overlayImg.src = src;
-                                    overlay.classList.add('active');
-                                    document.documentElement.classList.add('no-scroll'); // ล็อกสกรอลล์พื้นหลัง
-                                };
+                            // รอให้ Swiper โหลดเสร็จก่อน
+                            setTimeout(() => {
+                                const swiperEl = document.querySelector('.portfolio-swiper');
+                                if (swiperEl && swiperEl.swiper) {
+                                    swiperInstance = swiperEl.swiper;
+                                }
+                            }, 500);
 
-                                const hide = () => {
-                                    overlay.classList.remove('active');
-                                    document.documentElement.classList.remove('no-scroll');
-                                };
-
-                                // ปิดเมื่อคลิกพื้นที่มืด หรือกด ESC
-                                overlay.addEventListener('click', hide);
-                                window.addEventListener('keydown', (e) => { if (e.key === 'Escape') hide(); });
-
-                                // ใช้ event delegation: จับคลิกจากลิงก์รูปภายใน .image-grid ทั้งหมด
-                                document.addEventListener('click', (e) => {
-                                    const a = e.target.closest('.image-grid a');
-                                    if (!a) return;
-
-                                    // อนุญาต Ctrl/Cmd-Click เปิดแท็บใหม่ได้ตามปกติ
-                                    if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button === 1) return;
-
-                                    // ใช้ href เป็นรูปใหญ่ ถ้าไม่มีค่อย fallback เป็น src ของ <img>
-                                    const href = a.getAttribute('href') || (a.querySelector('img') && a.querySelector('img').src);
-                                    if (!href) return;
-
-                                    // โฟกัสเฉพาะไฟล์ .jpg/.jpeg (ถ้าอยากรองรับ .png ด้วยให้เพิ่มใน regex)
-                                    const lower = href.split('?')[0].toLowerCase();
-                                    if (!/\.(jpg|jpeg)$/.test(lower)) return;
-
-                                    e.preventDefault(); // กันไม่ให้เปิดลิงก์
-                                    show(href);
+                            // สร้างวงกลมปุ่มสำหรับรูปปัจจุบัน
+                            const updateNavCircle = () => {
+                                if (allImages.length === 0) return;
+                                
+                                const currentImg = allImages[currentIndex];
+                                if (!currentImg.link || currentImg.link === '#' || currentImg.link.trim() === '') {
+                                    navContainer.innerHTML = ''; // ไม่แสดงวงกลม
+                                    return;
+                                }
+                                navContainer.innerHTML = `
+                                    <div class="nav-circle">
+                                        <img src="images/sketchfab-logo.png" alt="Navigate">
+                                    </div>
+                                `;
+                                
+                                const circle = navContainer.querySelector('.nav-circle');
+                                circle.addEventListener('click', (e) => {
+                                    e.stopPropagation();
+                                    
+                                    // ถ้ามี data-link ให้ไปหน้านั้นในแท็บเดิม
+                                    if (currentImg.link && currentImg.link !== '#') {
+                                        window.location.href = currentImg.link; // ไปหน้าใหม่ในแท็บเดิม
+                                    }
+                                    // ถ้ามี data-slide ให้เปลี่ยน slide
+                                    else if (swiperInstance && currentImg.slideIndex !== null) {
+                                        hide();
+                                        swiperInstance.slideTo(currentImg.slideIndex);
+                                    }
                                 });
-                            })();
+                            };
+
+                            const showImage = (index) => {
+                                currentIndex = index;
+                                overlayImg.src = allImages[index].full;
+                                updateNavCircle();
+                            };
+
+                            const show = (clickedSrc) => {
+                                // หารูปทั้งหมดจาก slide ปัจจุบัน
+                                const activeSlide = document.querySelector('.swiper-slide-active');
+                                const imageLinks = activeSlide.querySelectorAll('.image-grid a');
+                                
+                                allImages = Array.from(imageLinks).map(link => ({
+                                    full: link.getAttribute('href'),
+                                    thumb: link.querySelector('img').src,
+                                    link: link.getAttribute('data-link') || null,
+                                    slideIndex: parseInt(link.getAttribute('data-slide')) || null
+                                }));
+
+                                // หารูปที่ถูกคลิก
+                                currentIndex = allImages.findIndex(img => img.full === clickedSrc);
+                                if (currentIndex === -1) currentIndex = 0;
+
+                                overlayImg.src = allImages[currentIndex].full;
+                                updateNavCircle();
+                                
+                                overlay.classList.add('active');
+                                document.documentElement.classList.add('no-scroll');
+                            };
+
+                            const hide = () => {
+                                overlay.classList.remove('active');
+                                document.documentElement.classList.remove('no-scroll');
+                            };
+
+                            // ปิดเมื่อคลิกพื้นหลัง
+                            overlay.addEventListener('click', (e) => {
+                                if (e.target === overlay) hide();
+                            });
+                            
+                            // ปุ่มปิด
+                            closeBtn.addEventListener('click', (e) => {
+                                e.stopPropagation();
+                                hide();
+                            });
+                            
+                            // กด ESC เพื่อปิด
+                            window.addEventListener('keydown', (e) => { 
+                                if (e.key === 'Escape') hide();
+                                // ลูกศรซ้าย/ขวาสำหรับเปลี่ยนรูป
+                                if (e.key === 'ArrowLeft' && currentIndex > 0) {
+                                    showImage(currentIndex - 1);
+                                }
+                                if (e.key === 'ArrowRight' && currentIndex < allImages.length - 1) {
+                                    showImage(currentIndex + 1);
+                                }
+                            });
+
+                            // จับคลิกจากรูป
+                            document.addEventListener('click', (e) => {
+                                const a = e.target.closest('.image-grid a');
+                                if (!a) return;
+
+                                // อนุญาต Ctrl/Cmd-Click
+                                if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button === 1) return;
+
+                                const href = a.getAttribute('href') || (a.querySelector('img') && a.querySelector('img').src);
+                                if (!href) return;
+
+                                // เช็คไฟล์ .jpg/.jpeg
+                                const lower = href.split('?')[0].toLowerCase();
+                                if (!/\.(jpg|jpeg)$/.test(lower)) return;
+
+                                e.preventDefault();
+                                show(href);
+                            });
+                        })();
                         </script>
                     </div>
                 </div>

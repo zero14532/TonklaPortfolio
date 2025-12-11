@@ -128,34 +128,9 @@ document.addEventListener('DOMContentLoaded', function () {
     <nav id="header-nav" class="navbar navbar-expand-lg py-4 z-1" data-bs-theme="dark">
         <div class="container-fluid padding-side">
             <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
-
-            <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <!-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5> -->
-                    <button type="button" class="btn-close text-reset shadow-none" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
-                </div>
+            <div >
                 <div class="offcanvas-body justify-content-end">
-                    <div class="d-lg-none">
-                        <img src="images/banner-img.png" alt="img" class="img-fluid">
-                        <div class="text-center">
-                            <a href="contact.html" class="btn button  text-white mt-4 position-relative pe-5"
-                                data-aos="fade-up" data-aos-duration="1600">
-                                <span> Hire Me </span>
-                                <div class="position-absolute top-50 end-0 translate-middle-y me-3">
-                                    <svg class="arrow-right text-white p-1" width="28" height="28">
-                                        <use xlink:href="#arrow-right"></use>
-                                    </svg>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <ul class="d-flex list-unstyled justify-content-center mt-4">
+                    <ul class="d-flex list-unstyled justify-content-center mt-3">
                         <li>
                             <a class="nav-link ms-4" href="https://www.instagram.com/t0n_kla/">
                                 <svg class="social-icon" width="24" height="24">
@@ -177,17 +152,17 @@ document.addEventListener('DOMContentLoaded', function () {
                         Let’s work <span class="text-primary">Together</span>
                     </h1>
                     <p data-aos="fade-up" data-aos-duration="1400">
-                        If you are interested in me. </p>
+                        If you’re interested in collaborating or hiring me for your next project.</p>
                 </div>
                 <div class="col-lg-9 mt-2" data-aos="fade-up" data-aos-duration="1400">
-                    <form id="contactForm" action="contact.php" method="post" class="form-group contact-form row">
+                    <form action="https://formspree.io/f/manayzjy" method="POST" class="form-group contact-form row">
                         <div class="col-lg-6 mb-4">
-                            <input type="text" name="name" placeholder="Full Name*"
-                                class="form-control bg-white rounded-2 border-0 w-100 ps-4 py-3" required="">
+                            <input type="text" name="name" placeholder="Full Name"
+                                class="form-control bg-white rounded-2 border-0 w-100 ps-4 py-3" required>
                         </div>
                         <div class="col-lg-6 mb-4">
-                            <input type="email" name="email" placeholder="Email*"
-                                class="form-control bg-white rounded-2 border-0 w-100 ps-4 py-3" required="">
+                            <input type="email" name="email" placeholder="Email"
+                                class="form-control bg-white rounded-2 border-0 w-100 ps-4 py-3" required>
                         </div>
                         <div class="col-lg-6 mb-4">
                             <input type="number" name="phone" placeholder="Phone"
@@ -199,13 +174,12 @@ document.addEventListener('DOMContentLoaded', function () {
                         </div>
                         <div class="col-lg-12 mb-4">
                             <textarea name="message" placeholder="Message"
-                                class="form-control bg-white rounded-2 border-0 w-100 ps-4 py-3" rows="4"
-                                required=""></textarea>
+                                class="form-control bg-white rounded-2 border-0 w-100 ps-4 py-3" rows="4" required></textarea>
                         </div>
                         <div class="">
-                            <button type="submit" name="submit"
+                            <button type="submit"
                                 class="btn rounded-pill button text-white mt-4 position-relative pe-5">
-                                <span> Let’s Talk </span>
+                                <span> Send Message </span> 
                                 <div class="position-absolute top-50 end-0 translate-middle-y me-3">
                                     <svg class="arrow-right text-white p-1" width="28" height="28">
                                         <use xlink:href="#arrow-right"></use>
@@ -214,6 +188,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             </button>
                         </div>
                     </form>
+                    
                 </div>
             </div>
         </div>
