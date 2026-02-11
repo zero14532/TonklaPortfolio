@@ -137,6 +137,7 @@
                 
                 <div class="col-lg-9" data-aos="fade-up" data-aos-duration="1400">
                     <div class="swiper portfolio-swiper">
+                        <div class="swiper-slide">  </div> 
                         <div class="swiper-wrapper">
                             <div class="swiper-slide"> 
                                 <style> 
@@ -180,90 +181,284 @@
                                         }
                                     }
                                     
+                                    /* คุมกรอบของรูปภาพแต่ละใบ */
+                                    .portfolio-item {
+                                        position: relative; /* สำคัญมาก: เพื่อให้ปุ่มอ้างอิงตำแหน่งจากกรอบรูปนี้ */
+                                        display: block;
+                                        overflow: hidden;
+                                        border-radius: 8px;
+                                    }
+
+                                    /* ตัวจัดการตำแหน่งของปุ่ม */
+                                    .item-overlay {
+                                        position: absolute;
+                                        bottom: 8px;    /* ห่างจากขอบบน 8px */
+                                        left: 8px;   /* ห่างจากขอบซ้าย 8px (ติดขอบซ้ายตามที่ต้องการ) */
+                                        z-index: 10; /* ให้อยู่เหนือรูปภาพ */
+                                        opacity: 0.8; /* ให้ดูโปร่งแสงนิดๆ จะได้ไม่กวนสายตา */
+                                        transition: opacity 0.3s ease;
+                                    }
+
+                                    /* เมื่อเอาเมาส์วางที่รูป ให้ปุ่มชัดขึ้น */
+                                    .portfolio-item:hover .item-overlay {
+                                        opacity: 1;
+                                    }
+
+                                    /* ปรับขนาดวงกลมปุ่มให้เล็กลง */
+                                    .view-btn {
+                                        width: 35px;  /* ขนาดเล็กลงตามที่ต้องการ */
+                                        height: 35px;
+                                        background: rgba(255, 255, 255, 0.9); /* สีขาวโปร่งแสง */
+                                        border-radius: 50%;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+                                    }
+
+                                    /* ปรับขนาด Logo ข้างในปุ่ม */
+                                    .view-btn img {
+                                        width: 19px; 
+                                        height: 19px;
+                                        object-fit: contain;
+                                    }
+
+                                    /* สำหรับรูปที่ไม่มี data-link ให้ซ่อนปุ่มไว้ (กรณีใส่ class เดียวกันหมด) */
+                                    .portfolio-item:not([data-link]) .item-overlay {
+                                        display: none;
+                                    }
                                 </style>
                                 
                                 <div class="image-grid"> <!-- ภาพหน้าแรก -->
                                     
                                     <!-- data-link="realLife4.html คือกดเข้าไปดู 3D Model-->
                                     
-                                    <a href="images/game3.jpg" data-link="turtle.html" target="_blank">
-                                    <img src="images/game3.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    <a href="images/AvatarCharacter.jpg" data-link="AvatarCharacter.html" target="_blank" class="portfolio-item">
+                                        <img src="images/AvatarCharacter.jpg" alt="project-img" class="img-fluid rounded-3">
+                                        <div class="item-overlay">
+                                            <div class="view-btn">
+                                                <img src="images/sketchfab-logo.png" alt="view">
+                                            </div>
+                                        </div>
                                     </a>
 
-                                    <a href="images/game2.jpg" data-link="shark.html"target="_blank">
-                                    <img src="images/game2.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    <a href="images/GeckoCharacter.jpg" data-link="GeckoCharacter.html" target="_blank" class="portfolio-item">
+                                        <img src="images/GeckoCharacter.jpg" alt="project-img" class="img-fluid rounded-3">
+                                        <div class="item-overlay">
+                                            <div class="view-btn">
+                                                <img src="images/sketchfab-logo.png" alt="view">
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href="images/FrogCharacter.jpg" data-link="FrogCharacter.html" target="_blank" class="portfolio-item">
+                                        <img src="images/FrogCharacter.jpg" alt="project-img" class="img-fluid rounded-3">
+                                        <div class="item-overlay">
+                                            <div class="view-btn">
+                                                <img src="images/sketchfab-logo.png" alt="view">
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href="images/game3.jpg" data-link="turtle.html" target="_blank" class="portfolio-item">
+                                        <img src="images/game3.jpg" alt="project-img" class="img-fluid rounded-3">
+                                        <div class="item-overlay">
+                                            <div class="view-btn">
+                                                <img src="images/sketchfab-logo.png" alt="view">
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href="images/game2.jpg" data-link="shark.html"target="_blank" class="portfolio-item">
+                                        <img src="images/game2.jpg" alt="project-img" class="img-fluid rounded-3">
+                                        <div class="item-overlay">
+                                            <div class="view-btn">
+                                                <img src="images/sketchfab-logo.png" alt="view">
+                                            </div>
+                                        </div>
                                     </a>
                                     
-                                    <a href="images/game4.jpg" data-link="fish.html" target="_blank">
-                                    <img src="images/game4.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    <a href="images/game4.jpg" data-link="fish.html" target="_blank" class="portfolio-item">
+                                        <img src="images/game4.jpg" alt="project-img" class="img-fluid rounded-3">
+                                        <div class="item-overlay">
+                                            <div class="view-btn">
+                                                <img src="images/sketchfab-logo.png" alt="view">
+                                            </div>
+                                        </div>
                                     </a>
 
-                                    <a href="images/realLife4.jpg" data-link="thaiBuddhaAmulet.html" target="_blank">
-                                    <img src="images/realLife4.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    <a href="images/realLife4.jpg" data-link="thaiBuddhaAmulet.html" target="_blank" class="portfolio-item">
+                                        <img src="images/realLife4.jpg" alt="project-img" class="img-fluid rounded-3">
+                                        <div class="item-overlay">
+                                            <div class="view-btn">
+                                                <img src="images/sketchfab-logo.png" alt="view">
+                                            </div>
+                                        </div>
                                     </a>
 
-                                    <a href="images/game1.jpg" data-link="fantasySword.html" target="_blank">
+                                    <a href="images/game1.jpg" data-link="fantasySword.html" target="_blank" >
                                         <img src="images/game1.jpg" alt="project-img" class="img-fluid rounded-3">
+                                        <div class="item-overlay">
+                                        <div class="view-btn">
+                                            <img src="images/sketchfab-logo.png" alt="view">
+                                        </div>
+                                    </div>
                                     </a>
 
-                                    <a href="images/game5.jpg" target="_blank">
-                                    <img src="images/game5.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    <a href="images/game5.jpg" target="_blank" class="portfolio-item">
+                                        <img src="images/game5.jpg" alt="project-img" class="img-fluid rounded-3">
+                                        <div class="item-overlay">
+                                            <div class="view-btn">
+                                                <img src="images/sketchfab-logo.png" alt="view">
+                                            </div>
+                                        </div>
                                     </a>
                                     
-                                    <a href="images/game6.jpg" target="_blank">
-                                    <img src="images/game6.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    <a href="images/game6.jpg" target="_blank" class="portfolio-item">
+                                        <img src="images/game6.jpg" alt="project-img" class="img-fluid rounded-3">
+                                        <div class="item-overlay">
+                                        <div class="view-btn">
+                                            <img src="images/sketchfab-logo.png" alt="view">
+                                        </div>
+                                    </div>
                                     </a>
                                     
-                                    <a href="images/game7.jpg" target="_blank">
-                                    <img src="images/game7.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    <a href="images/game7.jpg" target="_blank" class="portfolio-item">
+                                        <img src="images/game7.jpg" alt="project-img" class="img-fluid rounded-3">
+                                        <div class="item-overlay">
+                                        <div class="view-btn">
+                                            <img src="images/sketchfab-logo.png" alt="view">
+                                        </div>
+                                    </div>
                                     </a>
                                     
-                                    <a href="images/game8.jpg" target="_blank">
-                                    <img src="images/game8.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    <a href="images/game8.jpg" target="_blank" class="portfolio-item">
+                                        <img src="images/game8.jpg" alt="project-img" class="img-fluid rounded-3">
+                                        <div class="item-overlay">
+                                        <div class="view-btn">
+                                            <img src="images/sketchfab-logo.png" alt="view">
+                                        </div>
+                                    </div>
                                     </a>
                                     
-                                    <a href="images/realLife1.jpg" target="_blank">
-                                    <img src="images/realLife1.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    <a href="images/realLife1.jpg" target="_blank" class="portfolio-item">
+                                        <img src="images/realLife1.jpg" alt="project-img" class="img-fluid rounded-3">
+                                        <div class="item-overlay">
+                                        <div class="view-btn">
+                                            <img src="images/sketchfab-logo.png" alt="view">
+                                        </div>
+                                    </div>
                                     </a>
                                     
-                                    <a href="images/realLife2.jpg" target="_blank">
-                                    <img src="images/realLife2.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    <a href="images/realLife2.jpg" target="_blank" class="portfolio-item">
+                                        <img src="images/realLife2.jpg" alt="project-img" class="img-fluid rounded-3">
+                                        <div class="item-overlay">
+                                        <div class="view-btn">
+                                            <img src="images/sketchfab-logo.png" alt="view">
+                                        </div>
+                                    </div>
                                     </a>
                                     
-                                    <a href="images/realLife3.jpg" target="_blank">
-                                    <img src="images/realLife3.jpg" alt="project-img" class="img-fluid rounded-3">
+                                    <a href="images/realLife3.jpg" target="_blank" class="portfolio-item">
+                                        <img src="images/realLife3.jpg" alt="project-img" class="img-fluid rounded-3">
+                                        <div class="item-overlay">
+                                        <div class="view-btn">
+                                            <img src="images/sketchfab-logo.png" alt="view">
+                                        </div>
+                                    </div>
                                     </a>
 
+                                    <a href="images/game9.jpg" target="_blank" class="portfolio-item">
+                                        <img src="images/game9.jpg" alt="project-img" class="img-fluid rounded-3">
+                                        <div class="item-overlay">
+                                        <div class="view-btn">
+                                            <img src="images/sketchfab-logo.png" alt="view">
+                                        </div>
+                                    </div>
+                                    </a>
                                     
+                                   
+                                    <a href="images/game10.jpg" target="_blank" class="portfolio-item">
+                                        <img src="images/game10.jpg" alt="project-img" class="img-fluid rounded-3">
+                                        <div class="item-overlay">
+                                        <div class="view-btn">
+                                            <img src="images/sketchfab-logo.png" alt="view">
+                                        </div>
+                                    </div>
+                                    </a>
+                                    
+                                    <a href="images/game11.jpg" target="_blank" class="portfolio-item">
+                                        <img src="images/game11.jpg" alt="project-img" class="img-fluid rounded-3">
+                                        <div class="item-overlay">
+                                        <div class="view-btn">
+                                            <img src="images/sketchfab-logo.png" alt="view">
+                                        </div>
+                                    </div>
+                                    </a>
+                                   
+                                    <a href="images/game12.jpg" target="_blank" class="portfolio-item">
+                                        <img src="images/game12.jpg" alt="project-img" class="img-fluid rounded-3">
+                                        <div class="item-overlay">
+                                        <div class="view-btn">
+                                            <img src="images/sketchfab-logo.png" alt="view">
+                                        </div>
+                                    </div>
+                                    </a>
+                                    
+                                    <a href="images/game13.jpg" target="_blank" class="portfolio-item">
+                                        <img src="images/game13.jpg" alt="project-img" class="img-fluid rounded-3">
+                                        <div class="item-overlay">
+                                        <div class="view-btn">
+                                            <img src="images/sketchfab-logo.png" alt="view">
+                                        </div>
+                                    </div>
+                                    </a>
+                                    
+                                    <a href="images/camt1.jpg" target="_blank" class="portfolio-item">
+                                        <img src="images/camt1.jpg" alt="project-img" class="img-fluid rounded-3">
+                                        <div class="item-overlay">
+                                        <div class="view-btn">
+                                            <img src="images/sketchfab-logo.png" alt="view">
+                                        </div>
+                                    </div>
+                                    </a>
+                                    
+                                    <a href="images/camt2.jpg" data-link="camtAward1.html" target="_blank" class="portfolio-item">
+                                        <img src="images/camt2.jpg" alt="project-img" class="img-fluid rounded-3">
+                                        <div class="item-overlay">
+                                        <div class="view-btn">
+                                            <img src="images/sketchfab-logo.png" alt="view">
+                                        </div>
+                                    </div>
+                                    </a>
+                                    
+                                    <a href="images/camt3.jpg" target="_blank" class="portfolio-item">
+                                        <img src="images/camt3.jpg" alt="project-img" class="img-fluid rounded-3">
+                                        <div class="item-overlay">
+                                        <div class="view-btn">
+                                            <img src="images/sketchfab-logo.png" alt="view">
+                                        </div>
+                                    </div>
+                                    </a>
+                                    
+                                    <a href="images/camt4.jpg" target="_blank" class="portfolio-item">
+                                        <img src="images/camt4.jpg" alt="project-img" class="img-fluid rounded-3">
+                                        <div class="item-overlay">
+                                        <div class="view-btn">
+                                            <img src="images/sketchfab-logo.png" alt="view">
+                                        </div>
+                                    </div>1 
+                                    </a>
                                 </div>
                                 
                             </div>
-                            <div class="swiper-slide">
+                           <!--  <div class="swiper-slide">
                                 <style>
                                     
                                 </style>
                                 <div class="image-grid">
                                     
-                                    <a href="images/game9.jpg" target="_blank">
-                                    <img src="images/game9.jpg" alt="project-img" class="img-fluid rounded-3">
-                                    </a>
                                     
-                                   
-                                    <a href="images/game10.jpg" target="_blank">
-                                    <img src="images/game10.jpg" alt="project-img" class="img-fluid rounded-3">
-                                    </a>
-                                    
-                                    <a href="images/game11.jpg" target="_blank">
-                                    <img src="images/game11.jpg" alt="project-img" class="img-fluid rounded-3">
-                                    </a>
-                                   
-                                    <a href="images/game12.jpg" target="_blank">
-                                    <img src="images/game12.jpg" alt="project-img" class="img-fluid rounded-3">
-                                    </a>
-                                    
-                                    <a href="images/game13.jpg" target="_blank">
-                                    <img src="images/game13.jpg" alt="project-img" class="img-fluid rounded-3">
-                                    </a>
                                     
                                     
                                 </div>
@@ -272,24 +467,10 @@
                             
                                 <div class="image-grid">
                                     
-                                    <a href="images/camt1.jpg" target="_blank">
-                                    <img src="images/camt1.jpg" alt="project-img" class="img-fluid rounded-3">
-                                    </a>
                                     
-                                    <a href="images/camt2.jpg" data-link="camtAward1.html" target="_blank">
-                                    <img src="images/camt2.jpg" alt="project-img" class="img-fluid rounded-3">
-                                    </a>
-                                    
-                                    <a href="images/camt3.jpg" target="_blank">
-                                    <img src="images/camt3.jpg" alt="project-img" class="img-fluid rounded-3">
-                                    </a>
-                                    
-                                    <a href="images/camt4.jpg" target="_blank">
-                                    <img src="images/camt4.jpg" alt="project-img" class="img-fluid rounded-3">
-                                    </a>
                                     
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="swiper-pagination position-static mt-3"></div>
                         <script>

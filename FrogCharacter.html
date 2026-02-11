@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frog Character</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    :root {
+      --tabbar-height: 0px; /* 🟢 ปรับตามความสูงของแท็บบาร์จริง */
+    }
+
+    .sketchfab-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: calc(100dvh - var(--tabbar-height)); /* ✅ ลดพื้นที่ล่างให้พ้นแท็บบาร์ */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #000;
+      box-sizing: border-box;
+    }
+
+    .sketchfab-embed-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border: 10px solid transparent;
+      box-sizing: border-box;
+    }
+
+    .sketchfab-embed-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    .sketchfab-embed-wrapper p {
+      display: none;
+    }
+
+    /* 📱 ปรับเพิ่มเติมสำหรับจอเล็ก */
+    @media (max-width: 768px) {
+      :root {
+        --tabbar-height: 0px; /* มือถือบางเครื่องแท็บบาร์สูงขึ้น */
+      }
+    }
+  </style>
+</head>
+<body>
+  
+<!-- src="https://sketchfab.com/models/24d46697ba2b471cb2d7fb47ef8fdadf/embed?autostart=1" embed Model  ให้เพิ่ม ?autostart=1 & preload=1 ทำให้ลด Texture ละเอียด-->
+  <div class="sketchfab-container">
+    <div class="sketchfab-embed-wrapper">
+      <iframe 
+        src="https://sketchfab.com/models/b327337b0f0d47c7a7a906843895de19/embed?preload=1&autostart=1"  
+        allow="autoplay; fullscreen; xr-spatial-tracking"
+        xr-spatial-tracking 
+        execution-while-out-of-viewport 
+        execution-while-not-rendered 
+        web-share 
+        allowfullscreen
+        mozallowfullscreen="true" 
+        webkitallowfullscreen="true">
+      </iframe>
+    </div>
+  </div>
+
+
+
+</body>
+</html>
